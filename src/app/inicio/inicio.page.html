@@ -1,0 +1,78 @@
+<ion-content [fullscreen]="true" class="fondo">
+  <ion-grid class="inicio" [fixed]="true">
+    <ion-row>
+      <ion-col><img class="titulo" src="assets/titulo.png"></ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="card-row">
+    <!-- Tarjeta anterior -->
+    @if (i != 0) {
+    <div class="anterior">
+      <ion-card class="center-card">
+        <div class="card-header">
+          <img src="{{personajes[i-1].imagen_url}}" class="card-img" />
+          <div class="card-details">
+            <ion-card-header>
+              <ion-card-title>{{personajes[i-1].nombre}}</ion-card-title>
+              <ion-card-subtitle>
+                Smash: {{personajes[i-1].smash}} - {{getSmashPercentage(i-1)}}%
+              </ion-card-subtitle>
+              <ion-card-subtitle>
+                Pass: {{personajes[i-1].pass}} - {{getPassPercentage(i-1)}}%
+              </ion-card-subtitle>
+
+            </ion-card-header>
+          </div>
+        </div>
+      </ion-card>
+    </div>
+    }
+
+    <!-- Tarjeta actual -->
+    <div class="actual">
+      <ion-card class="center-card">
+        <div class="card-header">
+          <img src="{{personajes[i].imagen_url}}" class="card-img" />
+          <div class="card-details">
+            <ion-card-header>
+              <ion-card-title>{{personajes[i].nombre}}</ion-card-title>
+              <ion-card-subtitle>Tipo de ataque: {{personajes[i].tipo_ataque}}</ion-card-subtitle>
+              <ion-card-subtitle>Defensa favorita: {{personajes[i].objetivo_preferido}}</ion-card-subtitle>
+              <ion-card-subtitle>Vida: {{personajes[i].vida}}</ion-card-subtitle>
+              <ion-card-subtitle>Daño: {{personajes[i].dano}}</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              {{personajes[i].descripcion}}
+            </ion-card-content>
+          </div>
+        </div>
+      </ion-card>
+    </div>
+
+    <!-- Tarjeta siguiente -->
+    <div class="proximo">
+      <ion-card class="center-card">
+        <div class="card-header">
+          <img src="{{personajes[i+1].imagen_url}}" class="card-img" />
+          <div class="card-details">
+            <ion-card-header>
+              <ion-card-title>{{personajes[i+1].nombre}}</ion-card-title>
+              <ion-card-subtitle>Smash: ???</ion-card-subtitle>
+              <ion-card-subtitle>Pass: ???</ion-card-subtitle>
+            </ion-card-header>
+          </div>
+        </div>
+      </ion-card>
+    </div>
+  </div>
+
+  <div class="botones-container">
+    <ion-button class="boton pass" (click)="pass(i)" (click)="contador1()" color="danger">
+      Pass {{contadorpass}}
+    </ion-button>
+    <ion-button class="boton smash" (click)="smash(i)" (click)="contador2()" color="success">
+      Smash {{contadorsmash}}
+    </ion-button>
+  </div>
+</ion-content>
