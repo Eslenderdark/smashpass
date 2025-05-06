@@ -11,15 +11,15 @@
     <div class="anterior">
       <ion-card class="center-card">
         <div class="card-header">
-          <img src="{{personajes[i-1].imagen_url}}" class="card-img" />
+          <img src="{{personajes[i-1]?.imagen_url}}" class="card-img" />
           <div class="card-details">
             <ion-card-header>
-              <ion-card-title>{{personajes[i-1].nombre}}</ion-card-title>
+              <ion-card-title>{{personajes[i-1]?.nombre}}</ion-card-title>
               <ion-card-subtitle>
-                Smash: {{personajes[i-1].smash}} - {{getSmashPercentage(i-1)}}%
+                Smash: {{personajes[i-1]?.smash}} - {{getSmashPercentage(i-1)}}%
               </ion-card-subtitle>
               <ion-card-subtitle>
-                Pass: {{personajes[i-1].pass}} - {{getPassPercentage(i-1)}}%
+                Pass: {{personajes[i-1]?.pass}} - {{getPassPercentage(i-1)}}%
               </ion-card-subtitle>
 
             </ion-card-header>
@@ -33,14 +33,14 @@
     <div class="actual">
       <ion-card class="center-card">
         <div class="card-header">
-          <img src="{{personajes[i].imagen_url}}" class="card-img" />
+          <img src="{{personajes[i]?.imagen_url}}" class="card-img" />
           <div class="card-details">
             <ion-card-header>
-              <ion-card-title>{{personajes[i].nombre}}</ion-card-title>
-              <ion-card-subtitle>Tipo de ataque: {{personajes[i].tipo_ataque}}</ion-card-subtitle>
-              <ion-card-subtitle>Defensa favorita: {{personajes[i].objetivo_preferido}}</ion-card-subtitle>
-              <ion-card-subtitle>Vida: {{personajes[i].vida}}</ion-card-subtitle>
-              <ion-card-subtitle>Daño: {{personajes[i].dano}}</ion-card-subtitle>
+              <ion-card-title>{{personajes[i]?.nombre}}</ion-card-title>
+              <ion-card-subtitle>Tipo de ataque: {{personajes[i]?.tipo_ataque}}</ion-card-subtitle>
+              <ion-card-subtitle>Defensa favorita: {{personajes[i]?.objetivo_preferido}}</ion-card-subtitle>
+              <ion-card-subtitle>Vida: {{personajes[i]?.vida}}</ion-card-subtitle>
+              <ion-card-subtitle>Daño: {{personajes[i?].dano}}</ion-card-subtitle>
             </ion-card-header>
             <ion-card-content>
               {{personajes[i].descripcion}}
@@ -54,10 +54,10 @@
     <div class="proximo">
       <ion-card class="center-card">
         <div class="card-header">
-          <img src="{{personajes[i+1].imagen_url}}" class="card-img" />
+          <img src="{{personajes[i+1]?.imagen_url}}" class="card-img" />
           <div class="card-details">
             <ion-card-header>
-              <ion-card-title>{{personajes[i+1].nombre}}</ion-card-title>
+              <ion-card-title>{{personajes[i+1]?.nombre}}</ion-card-title>
               <ion-card-subtitle>Smash: ???</ion-card-subtitle>
               <ion-card-subtitle>Pass: ???</ion-card-subtitle>
             </ion-card-header>
