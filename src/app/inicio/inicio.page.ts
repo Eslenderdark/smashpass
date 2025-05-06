@@ -22,7 +22,7 @@ export class InicioPage implements OnInit {
   public i: number = 0;
   public contadorpass: number = 0;
   public contadorsmash: number = 0;
-  public url_host: string = "http://localhost:3000/";
+  public url_host: string = "https://back-smashpass-8z0d.onrender.com";
   public personajes: any[] = [];
 
   getData() {
